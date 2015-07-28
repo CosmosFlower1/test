@@ -1,5 +1,5 @@
 <?php
 
-echo 'echo!!';
+echo "echo";
 
-var_dump($GLOBALS);
+echo getenv('AWS_REGION');
