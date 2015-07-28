@@ -1,5 +1,4 @@
+#!/usr/bin/env php
 <?php
 
-echo "echo";
-
-echo $_SERVER['AWS_REGION'];
+getenv('TEST_VAL');
