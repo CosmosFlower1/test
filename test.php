@@ -2,4 +2,4 @@
 
 echo "echo";
 
-echo getenv('AWS_REGION');
+echo $_SERVER['AWS_REGION'];
