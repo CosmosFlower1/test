@@ -1,4 +1,4 @@
 #!/usr/bin/env php
 <?php
 
-getenv('TEST_VAL');
+echo getenv('TEST_VAL');
