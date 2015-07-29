@@ -9,8 +9,6 @@ dependencies:
 
 test:
   override:
-    - gem list
-    - echo "test"
 
 deployment:
   production:
