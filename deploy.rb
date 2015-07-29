@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 
 require 'rubygems'
+require 'fileutils'
 require 'aws-sdk'
 
 # AWS に接続する
@@ -21,9 +22,13 @@ require 'aws-sdk'
 #  puts "#{object.key}"
 #end
 
+p Dir::entries("../")
 
-puts Dir::pwd
+current_directory_path = Dir.getwd
+current_directory_name = current_directory_path.match(/[a-zA-Z0-9]*$/)[0]
+
+puts current_directory_name
+#FileUtils.cp_r('testdir', 'cptest')
 
 
 
-p Dir::entries(Dir::pwd)
