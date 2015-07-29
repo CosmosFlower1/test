@@ -1,35 +1,33 @@
 #!/usr/bin/env ruby
 
 require 'rubygems'
-require 'fileutils'
 require 'aws-sdk'
+
+# アップロードするファイル（ディレクトリも含む）のリストを取得する
+
+Dir.chdir("../../")
+
+upload_file_list = Dir.glob '**/*'
 
 # AWS に接続する
 
-#s3 = Aws::S3::Client.new
+s3_update = Aws::S3::Resource.new
 
-# 接続したS3 の buckets のリストを取得
+# 取得したファイルのリストをアップロードする
 
-#resp = s3.list_buckets
+puts s3_update
 
-# S3 に登録されている bucket のリストを取得
+upload_file_list.each{|path|
 
-#bucket_list = resp.buckets.map(&:name)
+  # 取得したリストでディレクトリの場合は処理をスキップする
 
-#resp2 = s3.list_objects(bucket: ENV["AWS_BUCKET_NAME"])
+  puts path
 
-#resp2.contents.each do |object|
-#  puts "#{object.key}"
-#end
+  next unless FileTest.file?(path)
 
-p Dir::entries("../")
+  # 指定した バケットにファイルをアップロードする
 
-current_directory_path = Dir.getwd
-current_directory_name = current_directory_path.match(/[a-zA-Z0-9]*$/)[0]
-
-puts current_directory_path
-puts current_directory_name
-#FileUtils.cp_r('testdir', 'cptest')
-
-
+#  upload_object = s3_update.bucket(ENV["AWS_BUCKET_NAME"]).object(path)
+#  upload_object.upload_file(path)
+}
 
