@@ -5,8 +5,6 @@ require 'aws-sdk'
 
 # アップロードするファイル（ディレクトリも含む）のリストを取得する
 
-Dir.chdir("../")
-
 upload_file_list = Dir.glob '**/*'
 
 # AWS に接続する
