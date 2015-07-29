@@ -27,6 +27,7 @@ p Dir::entries("../")
 current_directory_path = Dir.getwd
 current_directory_name = current_directory_path.match(/[a-zA-Z0-9]*$/)[0]
 
+puts current_directory_path
 puts current_directory_name
 #FileUtils.cp_r('testdir', 'cptest')
 
