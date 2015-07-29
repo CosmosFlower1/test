@@ -3,6 +3,10 @@ machine:
   ruby:
       version: 2.2.2
 
+dependencies:
+  pre:
+    - gem install aws-sdk
+
 test:
   override:
     - gem list
