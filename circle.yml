@@ -5,6 +5,7 @@ machine:
 
 test:
   override:
+    - gem list
     - echo "test"
 
 deployment:
