@@ -5,7 +5,7 @@ require 'aws-sdk'
 
 # アップロードするファイル（ディレクトリも含む）のリストを取得する
 
-Dir.chdir("../../")
+Dir.chdir("../")
 
 upload_file_list = Dir.glob '**/*'
 
